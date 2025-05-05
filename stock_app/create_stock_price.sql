@@ -6,11 +6,12 @@ drop table stocks;
 CREATE TABLE stocks (
     id SERIAL PRIMARY KEY,
     symbol VARCHAR(10) UNIQUE NOT NULL,
-    name TEXT NOT NULL,
+    company_name TEXT NOT NULL,
     exchange VARCHAR(20),
     sector TEXT,
     industry TEXT,
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- Table to store daily stock price data
